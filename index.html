@@ -1,0 +1,83 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <title>Bird macFlap</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link rel="shortcut icon" href="/favicon.ico">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <!-- build:css styles/vendor.css -->
+        <!-- bower:css -->
+
+        <!-- endbower -->
+        <!-- endbuild -->
+        <!-- build:css(.tmp) styles/main.css -->
+        <link rel="stylesheet" href="styles/main.css">
+        <!-- endbuild -->
+    </head>
+    <body>
+        <!--[if lt IE 10]>wq
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <audio id="music" loop autoplay>
+            <source src="/sounds/music2.wav"> 
+        </audio>
+
+        <audio id="flap-sound">
+            <source src="/sounds/wingflap.wav">
+        </audio>
+
+        <audio id="crash">
+            <source src="/sounds/crash.wav">
+        </audio>
+
+
+        <h1>Bird macFlap</h1>
+        <div id="Canvas" class="GameCanvas unselectable">
+            <div class="clouds"></div>
+            <div class="mountains"></div>
+            <div class="ground"></div>
+
+            <div id="Pipe1-upper" class="Pipe"></div>
+            <div id="Pipe1-lower" class="Pipe"></div>
+            <div id="Pipe2-upper" class="Pipe"></div>
+            <div id="Pipe2-lower" class="Pipe"></div>
+
+            <div class="Player"></div>
+            
+            <button id="mute-button">Mute</button>
+
+            <div class="Score">0</div>
+            
+            <div class="Scoreboard">
+                <div class="Scoreboard-score">
+                    <span>Score: </span>
+                    <span class="Scoreboard-score-number"></span>
+                </div>
+                <button class="Scoreboard-restart">
+                    <span class="Scoreboard-restartText">Restart</span>
+                </button>
+            </div>
+        </div>
+        
+
+        <!-- build:js scripts/vendor.js -->
+        <!-- bower:js -->
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <!-- endbower -->
+        <!-- endbuild -->
+
+        <!-- build:js({app,.tmp}) scripts/main.js -->
+        <script src="scripts/main.js"></script>
+        <script src="scripts/controls.js"></script>
+        <script src="scripts/game.js"></script>
+        <script src="scripts/player.js"></script>
+        <script src="scripts/pipes.js"></script>
+        <script src="scripts/utils.js"></script>
+        <!-- endbuild -->
+</body>
+</html>
