@@ -1,241 +1,211 @@
 .Player {
-  display: inline-block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 7em;
-  height: 4.9em;
-  bottom: 50%;
-  background: url("/sprites/3.png");
-  background-size: 100%;
-  /*-webkit-animation: birdFlap 0.2s steps(3, end) alternate infinite*/
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 7em;
+	height: 4.9em;
+	bottom: 50%;
+	background: url("/sprites/3.png");
+	background-size: 100%;
+
+	/*-webkit-animation: birdFlap 0.2s steps(3, end) alternate infinite*/
+
 }
 
 .Player.flapping {
-  -webkit-animation: birdFlap 0.2s steps(3, end) alternate infinite;
+	-webkit-animation: birdFlap 0.2s steps(3, end) alternate infinite;
 }
 
 .Player.rotating {
-  -webkit-animation: rotate 0.5s;
+	-webkit-animation: rotate 0.5s;
 }
 
 @-webkit-keyframes birdFlap {
-  from {
-    background-position: 0 15em;
-  }
-
-  to {
-    background-position: 0 0;
-  }
+	from {background-position:0 15em;}
+	to {background-position: 0 0;}
 }
 
 @-webkit-keyframes rotate {
-  from {
-    -webkit-transform: none;
-  }
-
-  40% {
-    -webkit-transform: rotate(-30deg);
-  }
-
-  to {
-    -webkit-transform: rotate(90deg);
-    transform: rotate(90deg);
-  }
+	from {
+		-webkit-transform: none;
+	}
+	40% {
+		-webkit-transform: rotate(-30deg);
+	}
+	to {
+		transform: rotate(90deg);
+	}
 }
 
 .Pipe {
-  position: absolute;
-  background-image: url('/sprites/tree_tile.jpg');
-  background-size: 100%;
-  background-repeat: repeat;
+	position: absolute;
+	background-image: url('/sprites/tree_tile.jpg');
+	background-size: 100%;
+
+	background-repeat: repeat;
 }
 
 .Score {
-  position: absolute;
-  left: 50%;
-  top: 25%;
-  font-family: 'Sans-Serif';
-  font-size: 2.4em;
+	position: absolute;
+	left: 50%;
+	top: 25%;
+	font-family: 'Sans-Serif';
+	font-size: 2.4em;
 }
 
 .Scoreboard {
-  position: absolute;
-  left: 50%;
-  top: 10em;
-  height: 30em;
-  width: 40em;
-  margin-left: -20em;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  background: purple;
-  text-align: center;
-  -webkit-transform: translate(0, -40em);
-  transform: translate(0, -40em);
-  transition: transform 0.5s;
+	position: absolute;
+	left: 50%;
+	top: 10em;
+	height: 30em;
+	width: 40em;
+	margin-left: -20em;
+	box-sizing: border-box;
+	background: purple;
+	text-align: center;
+	-webkit-transform: translate(0, -40em);
+	-webkit-transition: -webkit-transform 0.5s;
+	transform: translate(0, -40em);
+	transition: transform 0.5s;
 }
 
 /**
 * Reset transform to animate it into the correct spot on the screen.
 */
-
 .Scoreboard.is-visible {
-  -webkit-transform: none;
-  transform: none;
+	-webkit-transform: none;
+	transform: none;
 }
 
 .Scoreboard-restart {
-  margin-top: 20em;
-  font-size: inherit;
-  padding: 0.4em 1.5em;
-  border: 0.2em solid white;
-  background: none;
-  cursor: pointer;
+	margin-top: 20em;
+	font-size: inherit;
+	padding: 0.4em 1.5em;
+	border: 0.2em solid white;
+	background: none;
+	cursor: pointer;
 }
-
 .Scoreboard-restartText {
-  font-family: 'Sans-Serif', serif;
-  font-size: 2.4em;
-  color: white;
+	font-family: 'Sans-Serif', serif;
+	font-size: 2.4em;
+	color: white;
 }
-
 .Scoreboard-score {
-  font-family: 'Sans-Serif', serif;
-  font-size: 2.4em;
-  color: white;
+	font-family: 'Sans-Serif', serif;
+	font-size: 2.4em;
+	color: white;
 }
-
 body {
-  background: white;
+	background: white;
 }
-
 .browsehappy {
-  margin: 0.2em 0;
-  background: ?#?ccc?;
-  color: #000;
-  padding: 0.2em 0;
+	margin: 0.2em 0;
+	background: ?#?ccc?;
+	color: #000;
+	padding: 0.2em 0;
 }
-
 .GameCanvas {
-  font-size: 10px;
-  border: 1px solid;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 102.4em;
-  height: 50.6em;
-  margin-left: -51.2em;
-  margin-top: -28.8em;
-  overflow: hidden;
-  background: white;
+	font-size: 10px;
+	border: 1px solid;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 102.4em;
+	height: 50.6em;
+	margin-left: -51.2em;
+	margin-top: -28.8em;
+	overflow: hidden;
+	background: white;
 }
 
 #mute-button {
-  position: absolute;
-  box-shadow: inset 0px 1px 0px 0px #caefab;
-  background: linear-gradient(to bottom, #77d42a 5%, #5cb811 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#77d42a', endColorstr='#5cb811',GradientType=0);
-  background-color: #77d42a;
-  border-radius: 6px;
-  border: 1px solid #268a16;
-  display: inline-block;
-  cursor: pointer;
-  color: #306108;
-  font-family: arial;
-  font-size: 15px;
-  font-weight: bold;
-  padding: 6px 24px;
-  text-decoration: none;
-  text-shadow: 0px 1px 0px #aade7c;
+	position: absolute;
+	-moz-box-shadow:inset 0px 1px 0px 0px #caefab;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #caefab;
+	box-shadow:inset 0px 1px 0px 0px #caefab;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #77d42a), color-stop(1, #5cb811));
+	background:-moz-linear-gradient(top, #77d42a 5%, #5cb811 100%);
+	background:-webkit-linear-gradient(top, #77d42a 5%, #5cb811 100%);
+	background:-o-linear-gradient(top, #77d42a 5%, #5cb811 100%);
+	background:-ms-linear-gradient(top, #77d42a 5%, #5cb811 100%);
+	background:linear-gradient(to bottom, #77d42a 5%, #5cb811 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#77d42a', endColorstr='#5cb811',GradientType=0);
+	background-color:#77d42a;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #268a16;
+	display:inline-block;
+	cursor:pointer;
+	color:#306108;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #aade7c;
 }
 
+
+
 #mute-button.mute {
-  background-image: url('/sprites/mute.png');
+	background-image: url('/sprites/mute.png');
 }
 
 #mute-button.unmute {
-  background-image: url('/sprites/unmute.png');
+	background-image: url('/sprites/unmute.png');
 }
 
 .clouds {
-  position: absolute;
-  background-image: url("/sprites/sky2.png");
-  background-repeat: no-repeat;
-  background-size: 100%;
-  width: 200%;
-  height: 100%;
-  -webkit-animation: cloudSlide 60s linear infinite;
-}
-
-@-webkit-keyframes cloudSlide {
-  from {
-    left: 0;
-  }
-
-  to {
-    left: -100%;
-  }
+	position: absolute;
+	background-image: url("/sprites/sky2.png");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	width: 200%;
+	height: 100%;
+	-webkit-animation:cloudSlide 60s linear infinite;
 }
 
 @keyframes cloudSlide {
-  from {
-    left: 0;
-  }
-
-  to {
-    left: -100%;
-  }
+	from { left: 0; }
+	to { left: -100%; }
 }
 
 .mountains {
-  position: absolute;
-  background: url("/sprites/mountain.png");
-  background-size: 100%;
-  width: 100%;
-  height: 100%;
+	position: absolute;
+	background: url("/sprites/mountain.png");
+	background-size: 100%;
+	width: 100%;
+	height: 100%;
 }
 
 .ground {
-  position: absolute;
-  background-image: url("/sprites/ground_double.png");
-  background-size: 100%;
-  height: 100%;
-  width: 200%;
+	position: absolute;
+	background-image: url("/sprites/ground_double.png");
+	background-size: 100%;
+	height: 100%;
+	width: 200%;	
+
 }
 
 .ground.sliding {
-  -webkit-animation: groundSlide 3.43s linear infinite;
-}
-
-@-webkit-keyframes groundSlide {
-  from {
-    left: 0;
-  }
-
-  to {
-    left: -100%;
-  }
+	-webkit-animation: groundSlide 3.43s linear infinite;
 }
 
 @keyframes groundSlide {
-  from {
-    left: 0;
-  }
-
-  to {
-    left: -100%;
-  }
+	from { left: 0; }
+	to {left: -100%;}
 }
 
 .mute {
-  margin-left: -51.2em;
+	  margin-left: -51.2em;
 }
 
 .unselectable {
-  -moz-user-select: -moz-none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -o-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }

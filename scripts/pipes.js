@@ -71,8 +71,8 @@ window.Pipes = (function () {
 			this.checkCollisionWithPlayer();
 			this.checkIfPlayerPassed();
 
-			this.elUpper.css('transform', 'translateZ(0) translateX(' + this.pos.x + 'em)');
-			this.elLower.css('transform', 'translateZ(0) translateX(' + this.pos.x + 'em)');
+			this.elUpper.css('-webkit-transform', 'translateZ(0) translateX(' + this.pos.x + 'em)');
+			this.elLower.css('-webkit-transform', 'translateZ(0) translateX(' + this.pos.x + 'em)');
 		} else {	 //Bird dead animaiton
 			if(this.game.player.pos.y < this.game.DISTANCE_TO_GROUND) {
 				this.game.player.pos.y += 0.5;
